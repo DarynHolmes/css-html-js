@@ -1,13 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      /* CSS */
+      /* element:  1 */
+      /* class:   10 */
+      /* id:     100 */
+      h1 {
+        color: #ff1e00;
+      }
 
-<h1>
-  What is HTML, CSS and JS
-</h1>
-<p>
-HTML  Structure
-</p>
-<p>
-CSS  Styling\Design. This determines what the site looks like. It provides colour, borders, etc. This determines what the site looks like. It provides colour, borders, etc
-</p>
-<p>
-JavaScript  Interaction\Behaviour
-</p>
+      /* By element */
+      h2 {
+        color: blue;
+      }
+
+      /* By ID */
+      #css-header {
+        background-color: plum;
+      }
+
+      /* By class */
+      .highlight {
+        background-color: yellow;
+      }
+
+      body > h2:nth-child(6) {
+        border: 2px solid green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>
+      What is HTML, CSS and JS
+    </h1>
+    <h2>HTML</h2>
+    <div>
+      <div>
+        nested header
+        <p>Structure</p>
+      </div>
+
+    </div>
+    <h2 id="css-header" class="highlight">CSS</h2>
+    <p class="highlight">
+      Styling\Design. This determines what the site looks like. It provides colour, borders, etc. This determines what the site looks like. It provides colour, borders, etc
+    </p>
+    <h2>JavaScript</h2>
+    <p>
+        Interaction\Behaviour
+    </p>
+  </body>
+</html>
+
