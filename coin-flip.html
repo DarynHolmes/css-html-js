@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coin Flip</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Coin Flip</h1>
+      <input id="times" type="text" value="1000">
+      <button id="run">Flip</button>
+
+      <ul>
+        <li id="results-heads" data-e2e="results">
+          <h2>Number of Heads</h2>
+          <p id="heads">0</p>
+        </li>
+        <li id="results-tails">
+          <h2>Number of Tails</h2>
+          <p id="tails">0</p>
+        </li>
+      </ul>
+    </div>
+    <script>
+      function simulator () {
+        var timesStr = document.getElementById("times").value
+        var times = parseInt(timesStr)
+
+        console.log('Starting ', times)
+        var headsCount = 0
+        var tailsCount = 0
+        for(var i = 0; i < times; i++) {
+          // var rnd = Math.floor(Math.random() * 2)
+          if (Math.random() < .5) {
+            headsCount++
+          } else {
+            tailsCount++
+          }
+        }
+        console.log('Tails Count ', tailsCount)
+        console.log('Heads Count ', headsCount)
+
+        document.getElementById("tails").innerHTML = tailsCount
+        document.getElementById("heads").innerHTML = headsCount
+
+        console.log('Done')
+      }
+      document.getElementById("run").addEventListener("click", simulator)
+
+    </script>
+    <style>
+
+            * {
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(160deg, #4197ab 0%, #3bb0ca 50%, #29c4df 75%);
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                resize: both;
+                overflow: auto;
+            }
+
+            #container {
+                width: 50%;
+                background: #fff;
+                padding: 32px;
+                border-radius: 5px;
+                box-shadow: rgba(0,0,0,0.3) 0px 0px 5px;
+                text-align: center;
+            }
+
+            #container h1 {
+                color: #333;
+                text-align: center;
+                font-size: 32px;
+            }
+
+            #container input {
+                border-radius: 3px;
+                width: 100px;
+                border: 1px solid #eee;
+                font-size: 18px;
+                padding: 8px;
+                margin-top: 16px;
+            }
+            #container button {
+                outline: 0;
+                border-radius: 3px;
+                border: 1px solid #eee;
+                background: #333;
+                color: #fff;
+                font-size: 18px;
+                padding: 8px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+                font-weight: normal;
+                transition: background 500ms ease-in-out;
+                padding: 8px 16px;
+            }
+
+            #container button:hover {
+                background: rgb(76, 134, 70);
+            }
+
+            #container ul {
+                display: flex;
+                width: 100%;
+            }
+            #container ul li {
+                /* background: #eee; */
+                border-radius: 5px;
+                box-sizing: border-box;
+                flex: 0 1 100%;
+                list-style: none;
+                padding: 32px;
+                margin: 16px 32px;
+                transition: background 500ms ease-in-out;
+            }
+                #container ul li:hover {
+                    background: rgb(255, 237, 157);
+                }
+                #container ul li:hover h2 {
+                    color: rgb(180, 109, 50);
+                }
+
+            #container ul li h2 {
+                font-size: 16px;
+                text-transform: uppercase;
+                color: #aaa;
+                letter-spacing: 1px;
+                text-align: center;
+                transition: color 500ms ease-in-out;
+            }
+
+            #container ul li p {
+                font-size: 48px;
+                text-align: center;
+                margin: 32px;
+                color: #666;
+            }
+        </style>
+
+  </body>
+</html>
